@@ -16,9 +16,9 @@ const theme = {
           black: '#000',
      },
      fonts: {
-          primary: 'Roboto, sans-serif',
+          montserrat: 'Montserrat, sans-serif',
+          roboto: 'Roboto, sans-serif',
           secondary: 'Open Sans, sans-serif',
-          display: 'Montserrat, sans-serif',
           body: 'Noto Sans, sans-serif',
           diseñadora: 'Proxima Nova',
      },

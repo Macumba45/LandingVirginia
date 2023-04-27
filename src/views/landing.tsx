@@ -1,17 +1,19 @@
 import { FC, memo } from "react";
-
-
-
-
+import { MainContainer } from "./style";
+import NavBar from "../componets/NavBar";
+import Footer from "../componets/Footer";
+import Video from "../componets/Video";
 
 const Landing: FC = () => {
 
 
     return (
 
-
-
-        <div>ESTO ES LA LANDING</div>
+        <MainContainer>
+            <NavBar />
+            <Video />
+            <Footer />
+        </MainContainer>
     )
 }
 
