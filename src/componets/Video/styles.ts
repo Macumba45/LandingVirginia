@@ -14,7 +14,12 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSizes.medium};
   text-align: center;
+
+  @media screen and (max-width: 600px) {
+    font-size: ${({ theme }) => theme.fontSizes.small};
+  }
 `;
+
 
 export const VideoContainer = styled.div`
 display: flex;
