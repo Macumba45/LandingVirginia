@@ -1,5 +1,5 @@
-import { FC, memo } from "react";
-import { motion } from "framer-motion";
+import { FC, memo, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
     MainContainer,
     TitleContainer,
@@ -34,6 +34,19 @@ const Video: FC = () => {
             y: 0, // devuelve cada letra a su posición original
         },
     };
+
+    const [shouldScale, setShouldScale] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShouldScale(true);
+            setTimeout(() => {
+                setShouldScale(false);
+            }, 1000);
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
 
 
     return (
@@ -105,13 +118,15 @@ const Video: FC = () => {
                     <motion.span variants={letterVariants}>.</motion.span>
                     <motion.span variants={letterVariants}>.</motion.span>
                 </motion.div>
-                <Span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0, scale: 1.1, color: "#fbfbfb" }}
-                    transition={{ duration: 2.0 }}
-                >
-                    3000€ y 5000€ al mes
-                </Span>
+                <AnimatePresence>
+                    <Span
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0, color: "#fbfbfb", scale: shouldScale ? 1.1 : 1 }}
+                        transition={{ duration: 2 }}
+                    >
+                        3000€ y 5000€ al mes
+                    </Span>
+                </AnimatePresence>
             </TitleContainer>
             <VideoContainer>
                 <VideoUrl src="/videos/myvideo.mp4" controls />
