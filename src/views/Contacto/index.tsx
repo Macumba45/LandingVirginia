@@ -1,12 +1,12 @@
 import { FC, memo } from "react";
-import FormContact from "../../componets/Formulario"
+import FormContact from "../../componets/Formulario";
 
 const Contacto: FC = () => {
-    return (
-        <>
-            <FormContact />
-        </>
-    );
+  return (
+    <>
+      <FormContact />
+    </>
+  );
 };
 
 export default memo(Contacto);

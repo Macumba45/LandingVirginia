@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-display:flex;
-justify-content: center;
-flex-direction: column;
-
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const FooterContainer = styled.div`
