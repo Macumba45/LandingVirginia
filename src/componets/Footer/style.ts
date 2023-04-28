@@ -25,6 +25,7 @@ export const TtitleFooter = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  text-align: center;
 `;
 
 export const LogosRRSS = styled.a`

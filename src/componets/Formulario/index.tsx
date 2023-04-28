@@ -47,6 +47,7 @@ const FormContact: FC = () => {
                         display: "flex",
                         justifyContent: "center",
                         fontFamily: "Montserrat",
+                        textAlign: 'center'
                     }}
                     variant="h6"
                 >
@@ -78,7 +79,7 @@ const FormContact: FC = () => {
                             <Button
                                 type="submit"
                                 variant="contained"
-                                style={{ backgroundColor: '#E1226B', color: 'white' }}
+                                style={{ backgroundColor: '#E1226B', color: 'white', width: '400px' }}
                                 startIcon={<SendIcon />}
                             >
                                 Enviar
