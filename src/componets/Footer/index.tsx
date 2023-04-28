@@ -20,14 +20,14 @@ const Footer: FC = () => {
 
     return (
         <MainContainer>
-            <TtitleFooter>Contactame para más información:</TtitleFooter>
+            <TtitleFooter>Contáctame para más información:</TtitleFooter>
             <Button
                 onClick={contactMe}
                 sx={{ width: '300px', height: '50px', margin: '2rem auto', backgroundColor: '#E1226B', color: '#fff', '&:hover': { backgroundColor: '#6c032b', color: '#ffffff' } }}
                 variant="contained"
                 endIcon={<SendIcon />}
             >
-                Contáctame
+                Cambia tu futuro
             </Button>
             <Copyrights>
                 <WebLink href="https://virginiahidalgo.es">virginiahidalgo.es</WebLink>
