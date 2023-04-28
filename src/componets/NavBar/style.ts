@@ -4,6 +4,8 @@ export const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* position: sticky;
+  top: 0; */
 `;
 
 export const NavBarContent = styled.div`

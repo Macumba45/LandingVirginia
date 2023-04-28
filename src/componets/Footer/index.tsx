@@ -1,23 +1,38 @@
-import { FC, memo } from "react";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import { FooterContainer, LogosRRSS, TtitleFooter, MainContainer } from "./style";
+import { FC, memo, useCallback } from "react";
+import SendIcon from '@mui/icons-material/Send';
+import {
+    TtitleFooter,
+    MainContainer,
+    Copyrights,
+    WebLink,
+} from "./style";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router";
 
 const Footer: FC = () => {
+
+    const navigate = useNavigate()
+
+    const contactMe = useCallback(() => {
+
+        navigate('/contacto')
+    }, []);
+
     return (
         <MainContainer>
-            <TtitleFooter>
-                Visita mis Redes Sociales
-            </TtitleFooter>
-            Visita mis Redes Sociales
-            <FooterContainer>
-                <LogosRRSS href="https://www.instagram.com/virginiahidalgoe">
-                    <InstagramIcon fontSize="large" />
-                </LogosRRSS>
-                <LogosRRSS href="https://www.youtube.com/@virginiahidalgo7980">
-                    <YouTubeIcon fontSize="large" />
-                </LogosRRSS>
-            </FooterContainer>
+            <TtitleFooter>Contactame para más información:</TtitleFooter>
+            <Button
+                onClick={contactMe}
+                sx={{ width: '300px', height: '50px', margin: '2rem auto', backgroundColor: '#E1226B', color: '#fff', '&:hover': { backgroundColor: '#6c032b', color: '#ffffff' } }}
+                variant="contained"
+                endIcon={<SendIcon />}
+            >
+                Contáctame
+            </Button>
+            <Copyrights>
+                <WebLink href="https://virginiahidalgo.es">virginiahidalgo.es</WebLink>
+                .&nbsp;Copyright 2023.&nbsp;All Rights Reserved.
+            </Copyrights>
         </MainContainer>
     );
 };
