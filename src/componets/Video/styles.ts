@@ -3,12 +3,24 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div``;
 
-export const TitleContainer = styled.div`
+export const TitleContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  color: ${({ theme }) => theme.colors.primaryLight};
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  line-height: 5rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: ${({ theme }) => theme.fontSizes.small};
+    line-height: 2rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -48,7 +60,7 @@ export const Span = styled(motion.span)`
   font-weight: 800;
 
   @media screen and (max-width: 600px) {
-    font-size: ${({ theme }) => theme.fontSizes.small};
+    font-size: 1.8rem;
     line-height: 2rem;
   }
 `;
