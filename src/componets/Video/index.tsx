@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
     MainContainer,
     TitleContainer,
-    Title,
     VideoContainer,
     VideoUrl,
     Span,

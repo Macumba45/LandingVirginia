@@ -1,13 +1,14 @@
 import { FC, memo, useCallback } from "react";
 import SendIcon from '@mui/icons-material/Send';
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router";
 import {
     TtitleFooter,
     MainContainer,
     Copyrights,
     WebLink,
 } from "./style";
-import { Button } from "@mui/material";
-import { useNavigate } from "react-router";
+
 
 const Footer: FC = () => {
 
@@ -16,14 +17,14 @@ const Footer: FC = () => {
     const contactMe = useCallback(() => {
 
         navigate('/contacto')
-    }, []);
+    }, [navigate]);
 
     return (
         <MainContainer>
             <TtitleFooter>Contáctame para más información:</TtitleFooter>
             <Button
                 onClick={contactMe}
-                sx={{ width: '300px', height: '50px', margin: '2rem auto', backgroundColor: '#E1226B', color: '#fff', '&:hover': { backgroundColor: '#6c032b', color: '#ffffff' } }}
+                sx={{ fontFamily: 'montserrat', width: '300px', height: '50px', margin: '2rem auto', backgroundColor: '#E1226B', color: '#fff', '&:hover': { backgroundColor: '#6c032b', color: '#ffffff' } }}
                 variant="contained"
                 endIcon={<SendIcon />}
             >

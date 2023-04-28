@@ -3,7 +3,7 @@ import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import SendIcon from '@mui/icons-material/Send';
 import { MainContainer } from "./styles";
-import { motion, Keyframes } from "framer-motion";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles({
     root: {
@@ -57,29 +57,29 @@ const FormContact: FC = () => {
             <MainContainer>
                 <form onSubmit={handleSubmit}>
                     <Grid container direction="column" spacing={2} className={classes.root}>
-                        <Grid item>
+                        <Grid style={{ fontFamily: 'montserrat' }} item>
                             <Typography style={{ fontFamily: 'Montserrat' }} variant="h6">Contáctame</Typography>
                         </Grid>
-                        <Grid item>
+                        <Grid style={{ fontFamily: 'montserrat' }} item>
                             <TextField label="Nombre" variant="outlined" required fullWidth />
                         </Grid>
-                        <Grid item>
+                        <Grid style={{ fontFamily: 'montserrat' }} item>
                             <TextField label="Apellidos" variant="outlined" required fullWidth />
                         </Grid>
-                        <Grid item>
+                        <Grid style={{ fontFamily: 'montserrat' }} item>
                             <TextField label="Email" variant="outlined" type="email" required fullWidth />
                         </Grid>
-                        <Grid item>
+                        <Grid style={{ fontFamily: 'montserrat' }} item>
                             <TextField label="Número de móvil" variant="outlined" required fullWidth />
                         </Grid>
-                        <Grid item>
+                        <Grid style={{ fontFamily: 'montserrat' }} item>
                             <TextField label="¿Cómo nos has conocido?" variant="outlined" required fullWidth />
                         </Grid>
                         <Grid item>
                             <Button
                                 type="submit"
                                 variant="contained"
-                                style={{ backgroundColor: '#E1226B', color: 'white', width: '400px' }}
+                                style={{ fontFamily: 'montserrat', backgroundColor: '#E1226B', color: 'white', width: '400px' }}
                                 startIcon={<SendIcon />}
                             >
                                 Enviar
