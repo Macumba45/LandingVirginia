@@ -1,10 +1,23 @@
 import { FC, memo, useEffect, useState } from "react";
-import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
-import { Dialog, DialogTitle, DialogContent, DialogActions } from "@material-ui/core"
+import {
+    Button,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Select,
+    TextField,
+    Typography,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+} from "@material-ui/core";
+
 import { makeStyles } from "@material-ui/styles";
 import SendIcon from "@mui/icons-material/Send";
-import { MainContainer, SentMessage } from "./styles";
 import { motion } from "framer-motion";
+import { MainContainer, SentMessage } from "./styles";
 
 const useStyles = makeStyles({
     root: {
@@ -13,15 +26,27 @@ const useStyles = makeStyles({
 });
 
 const FormContact: FC = () => {
-    const classes = useStyles();
-
+    const [isVisible, setIsVisible] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
-
-    const handleClose = () => {
-        setModalOpen(false);
+    const classes = useStyles();
+    const blinkAnimation = {
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
     };
 
-
+    const options = [
+        { value: "Facebook", label: "Facebook" },
+        { value: "Instagram", label: "Instagram" },
+        { value: "Tiktok", label: "Tiktok" },
+        { value: "Google", label: "Google" },
+        { value: "Youtube", label: "Youtube" },
+        { value: "A friend/coworker", label: "A friend/coworker" },
+        { value: "Ads", label: "Ads" },
+        { value: "LinkedIn", label: "LinkedIn" },
+        { value: "Podcast", label: "Podcast" },
+        { value: "Flip Your Future Book", label: "Flip Your Future Book" },
+        { value: "Other", label: "Other" },
+    ];
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -45,19 +70,15 @@ const FormContact: FC = () => {
         }
     };
 
-
-    const [isVisible, setIsVisible] = useState(true);
+    const handleClose = () => {
+        setModalOpen(false);
+    };
 
     useEffect(() => {
         setInterval(() => {
             setIsVisible(!isVisible);
-        }, 1000);
+        }, 2000);
     }, [isVisible]);
-
-    const blinkAnimation = {
-        visible: { opacity: 1 },
-        hidden: { opacity: 0 },
-    };
 
     return (
         <>
@@ -77,7 +98,7 @@ const FormContact: FC = () => {
                     }}
                     variant="h6"
                 >
-                    ¿Preparado para ganar 3000 a 5000€?
+                    ¿Preparado para ganar 3000€ a 5000€?
                 </Typography>
             </motion.div>
             <MainContainer>
@@ -139,24 +160,21 @@ const FormContact: FC = () => {
                         </Grid>
                         <Grid style={{ fontFamily: "montserrat" }} item>
                             <FormControl variant="outlined" fullWidth>
-                                <InputLabel id="select-label">¿Cómo nos has conocido?</InputLabel>
+                                <InputLabel id="select-label">
+                                    ¿Cómo nos has conocido?
+                                </InputLabel>
                                 <Select
                                     labelId="select-label"
                                     name="¿Cómo nos has conocido?"
                                     label="¿Cómo nos has conocido?"
                                     required
+                                    defaultValue={"Facebook"}
                                 >
-                                    <MenuItem value="Facebook">Facebook</MenuItem>
-                                    <MenuItem value="Instagram">Instagram</MenuItem>
-                                    <MenuItem value="Tiktok">Tiktok</MenuItem>
-                                    <MenuItem value="Google">Google</MenuItem>
-                                    <MenuItem value="Youtube">Youtube</MenuItem>
-                                    <MenuItem value="A friend/coworker">A friend/coworker</MenuItem>
-                                    <MenuItem value="Ads">Ads</MenuItem>
-                                    <MenuItem value="LinkedIn">LinkedIn</MenuItem>
-                                    <MenuItem value="Podcast">Podcast</MenuItem>
-                                    <MenuItem value="Flip Your Future Book">Flip Your Future Book</MenuItem>
-                                    <MenuItem value="Other">Other</MenuItem>
+                                    {options.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
                                 </Select>
                             </FormControl>
                         </Grid>

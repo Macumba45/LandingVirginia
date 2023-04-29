@@ -9,8 +9,6 @@ import {
 } from "./styles";
 
 const Video: FC = () => {
-
-    
   const titleVariants = {
     hidden: {
       opacity: 0,

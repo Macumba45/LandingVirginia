@@ -5,11 +5,8 @@ export const MainContainer = styled.div`
   margin: 0 auto;
 `;
 
-
 export const SentMessage = styled.p`
-
-font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.secondary};
   font-size: ${({ theme }) => theme.fontSizes.smallest};
-
-`
+`;
