@@ -64,3 +64,4 @@ export const Span = styled(motion.span)`
     line-height: 2rem;
   }
 `;
+

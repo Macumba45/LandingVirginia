@@ -18,6 +18,7 @@ import { makeStyles } from "@material-ui/styles";
 import SendIcon from "@mui/icons-material/Send";
 import { motion } from "framer-motion";
 import { MainContainer, SentMessage } from "./styles";
+import { useNavigate } from "react-router";
 
 const useStyles = makeStyles({
     root: {
@@ -28,11 +29,14 @@ const useStyles = makeStyles({
 const FormContact: FC = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
+    const [counter, setCounter] = useState(0);
     const classes = useStyles();
     const blinkAnimation = {
         visible: { opacity: 1 },
         hidden: { opacity: 0 },
     };
+    const navigate = useNavigate();
+
 
     const options = [
         { value: "Facebook", label: "Facebook" },
@@ -72,13 +76,23 @@ const FormContact: FC = () => {
 
     const handleClose = () => {
         setModalOpen(false);
+        navigate('/contacto')
     };
 
     useEffect(() => {
-        setInterval(() => {
-            setIsVisible(!isVisible);
-        }, 2000);
-    }, [isVisible]);
+        const interval = setInterval(() => {
+            setCounter((prevCounter) => prevCounter + 1);
+            setIsVisible((prevIsVisible) => !prevIsVisible);
+        }, 500);
+
+        if (counter >= 6) {
+            clearInterval(interval);
+        }
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [counter, isVisible]);
 
     return (
         <>
