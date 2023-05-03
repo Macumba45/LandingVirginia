@@ -55,6 +55,8 @@ export const Span = styled(motion.span)`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSizes.medium};
+  width: 90%;
+  margin:0 auto;
   text-align: center;
   margin-top: 2rem;
   font-weight: 800;
@@ -64,4 +66,3 @@ export const Span = styled(motion.span)`
     line-height: 2rem;
   }
 `;
-

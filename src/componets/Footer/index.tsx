@@ -13,9 +13,10 @@ const Footer: FC = () => {
 
   return (
     <MainContainer>
-      <TtitleFooter>Contáctame para más información:</TtitleFooter>
+      {/* <TtitleFooter>Contáctame para más información:</TtitleFooter> */}
       <Button
-        onClick={contactMe}
+        href="https://calendly.com/carol_cd/30min"
+        // onClick={contactMe}
         sx={{
           fontFamily: "montserrat",
           width: "350px",
@@ -28,7 +29,7 @@ const Footer: FC = () => {
         variant="contained"
         endIcon={<SendIcon />}
       >
-        Agendar Consultoría Gratuita
+        Agenda tu Consultoría GRATUITA
       </Button>
       <Copyrights>
         <WebLink href="https://virginiahidalgo.es">virginiahidalgo.es</WebLink>

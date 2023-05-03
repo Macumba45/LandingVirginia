@@ -8,7 +8,7 @@ const Router: FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/contacto" element={<Contacto />} />
+        {/* <Route path="/contacto" element={<Contacto />} /> */}
       </Routes>
     </BrowserRouter>
   );
