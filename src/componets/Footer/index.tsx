@@ -1,15 +1,14 @@
-import { FC, memo, useCallback } from "react";
+import { FC, memo } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router";
-import { TtitleFooter, MainContainer, Copyrights, WebLink } from "./style";
+import { MainContainer, Copyrights, WebLink } from "./style";
 
 const Footer: FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const contactMe = useCallback(() => {
-    navigate("/contacto");
-  }, [navigate]);
+  // const contactMe = useCallback(() => {
+  //   navigate("/contacto");
+  // }, [navigate]);
 
   return (
     <MainContainer>
