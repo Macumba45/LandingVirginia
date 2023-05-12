@@ -56,7 +56,7 @@ export const Span = styled(motion.span)`
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSizes.medium};
   width: 90%;
-  margin:0 auto;
+  margin: 0 auto;
   text-align: center;
   margin-top: 2rem;
   font-weight: 800;

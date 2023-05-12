@@ -127,7 +127,12 @@ const Video: FC = () => {
         </AnimatePresence>
       </TitleContainer>
       <VideoContainer>
-        <VideoUrl poster="https://virginiahidalgo.es/wp-content/uploads/2022/08/virginia-escenario.png" style={{ height: '600px' }} src="/videos/myvideo.mp4" controls />
+        <VideoUrl
+          poster="https://virginiahidalgo.es/wp-content/uploads/2022/08/virginia-escenario.png"
+          style={{ height: "600px" }}
+          src="/videos/myvideo.mp4"
+          controls
+        />
       </VideoContainer>
     </MainContainer>
   );
